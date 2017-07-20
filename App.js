@@ -1,7 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { NativeModules } from 'react-native';
+
+const CalendarManager = NativeModules.CalendarManager;
 
 export default class App extends React.Component {
+
+  componentDidMount () {
+    CalendarManager.addEvent('Birthday Party', '4 Privet Drive, Surrey');
+  }
+  
   render() {
     return (
       <View style={styles.container}>
